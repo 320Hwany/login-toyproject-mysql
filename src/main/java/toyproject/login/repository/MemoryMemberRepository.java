@@ -1,5 +1,6 @@
 package toyproject.login.repository;
 
+import org.springframework.stereotype.Component;
 import toyproject.login.member.Member;
 
 import java.util.HashMap;
