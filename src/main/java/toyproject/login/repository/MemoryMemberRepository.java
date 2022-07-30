@@ -24,6 +24,11 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
+    public Optional<Member> findByName(String name) {
+        return Optional.empty();
+    }
+
+    @Override
     public List<Member> findAll() {
         return null;
     }
