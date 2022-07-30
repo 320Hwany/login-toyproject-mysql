@@ -28,7 +28,7 @@ public class HomeController {
 
     @GetMapping("/members/new")
     public String createForm(){
-        return "home";
+        return "createForm";
     }
 
     @PostMapping("members/new")
