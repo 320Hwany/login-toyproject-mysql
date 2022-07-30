@@ -28,17 +28,19 @@ public class HomeController {
 
     @GetMapping("/members/new")
     public String createForm(){
-        return "createForm";
+        return "home";
     }
 
     @PostMapping("members/new")
-    public String createMember(MemberForm form){
+    public String createMember(MemberForm form, Model model){
         Member member = new Member();
         member.setName(form.getName());
         member.setPassword(form.getPassword());
         memberService.join(member);
 
-        return "redirect:/";
+        List<Member> list = memberService.findMembers();
+        model.addAttribute("members", list);
+        return "memberList";
     }
 
     @GetMapping("members")

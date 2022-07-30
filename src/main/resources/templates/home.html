@@ -1,12 +1,43 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 계정 로그인</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+
 <body>
+<script type="text/javascript" src="script.js"></script>
 <div class="container">
-    <div>
-        <h1>Hello Spring</h1> <p>회원 기능</p>
-        <p>
-            <a href="/members/new">회원 가입</a> <a href="/members">회원 목록</a>
-        </p> </div>
-</div> <!-- /container -->
+    <div id="loginBox">
+        <img class="logo"
+             src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg">
+        <div id="heading">로그인</div>
+        <form id="login" action="/members/new" method="post">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="아이디 또는 이메일 입력" autofocus required>
+                <input type="text" id="password" name="name" placeholder="비밀번호 입력" required>
+            </div>
+            <div class="form-group">
+                <div id="makeAccoutLink">계정이 없으신가요?<a id="signup" href="signup/sign.html"> 계정을 만드세요!</a></div>
+            </div>
+            <div class="form-group">
+                <a id="findAccount" href="findAccount.html">본인 계정으로 로그인할 수 없습니까?</a>
+            </div>
+            <div class="form-button">
+                <input type="button" value="뒤로">
+                <input type="submit" value="다음">
+                <input type="button" value="회원목록" onclick="location.href='/members'">
+                <script>
+
+                </script>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
+
 </html>
