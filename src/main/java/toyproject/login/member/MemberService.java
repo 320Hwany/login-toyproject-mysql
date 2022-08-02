@@ -29,8 +29,8 @@ public class MemberService {
                 });
     }
 
-    public Optional<Member> findMember(Long memberId){
-        return memberRepository.findById(memberId);
+    public Optional<Member> findMember(String name) {
+        return memberRepository.findByName(name);
     }
 
     public List<Member> findMembers(){

@@ -10,6 +10,7 @@ import toyproject.login.member.MemberForm;
 import toyproject.login.member.MemberService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class HomeController {
@@ -26,9 +27,25 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/members/new")
+    @PostMapping("/")
+    public String main(MemberForm form){
+        Optional<Member> member = memberService.findMember(form.getName());
+
+        if(!member.isEmpty()){
+            return "mainPage";
+        }else {
+            return "home";
+        }
+    }
+
+    @GetMapping("/createForm.html")
     public String createForm(){
         return "createForm";
+    }
+
+    @GetMapping("/findAccount/findAccount.html")
+    public String findAccount(){
+        return "findAccount";
     }
 
     @PostMapping("members/new")
